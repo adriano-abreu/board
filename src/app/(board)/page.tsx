@@ -155,7 +155,7 @@ export default async function Board({ searchParams }: BoardProps) {
         </Section.Header>
 
         <Section.Content>
-          {issues.backlog.map((issue) => (
+          {issues.done.map((issue) => (
             <Card.Root href={`/issues/${issue.id}`} key={issue.id}>
               <Card.Header>
                 <Card.Number>DON-{issue.issueNumber}</Card.Number>

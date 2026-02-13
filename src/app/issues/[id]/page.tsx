@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/button"
 import { getIssue } from "@/http/get-issue"
+import { IssuesCommentList } from "./issue-comments/issues-comments-list"
 
 interface IssuePageProps {
   params: {
@@ -58,6 +59,15 @@ export default async function IssuePage({ params }: IssuePageProps) {
         <p className="text-navy-100 text-sm leading-relaxed">
           {issue.description}
         </p>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <span className="font-semibold">Comments</span>
+        <form action=""></form>
+
+        <div className="mt-3">
+          <IssuesCommentList issueId={issue.id} />
+        </div>
       </div>
     </main>
   )
